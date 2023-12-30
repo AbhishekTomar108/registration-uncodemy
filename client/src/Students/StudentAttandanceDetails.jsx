@@ -106,7 +106,7 @@ function StudentAttandanceDetails() {
 
   const getAttendance = async(student) => {
     console.log("first last ", filteredMonth, student,batchDetail);
-    let filterStatus = await fetch("http://localhost:8000/getMonthAttendance", {
+    let filterStatus = await fetch("https://dashboard-backend3-85dw.onrender.com/getMonthAttendance", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -124,7 +124,7 @@ function StudentAttandanceDetails() {
   };
 
   const getstudent = async () => {
-    let res = await fetch(`http://localhost:8000/getuser/${id}`, {
+    let res = await fetch(`https://dashboard-backend3-85dw.onrender.com/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

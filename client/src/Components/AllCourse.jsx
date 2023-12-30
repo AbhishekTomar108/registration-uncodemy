@@ -77,7 +77,7 @@ export default function AllCourse() {
     console.log("course route =",course)
 
     try{
-    let newCourse = await fetch("http://localhost:8000/addNewCourse", {
+    let newCourse = await fetch("https://dashboard-backend3-85dw.onrender.com/addNewCourse", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -117,7 +117,7 @@ export default function AllCourse() {
     console.log("course route =",course)
 
     try{
-    let newCourse = await fetch("http://localhost:8000/addNewSubCourse", {
+    let newCourse = await fetch("https://dashboard-backend3-85dw.onrender.com/addNewSubCourse", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

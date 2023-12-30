@@ -54,7 +54,7 @@ const StudentState = (props) => {
   }
 
   const checkAdmin = async () => {
-    let userStatus = await fetch("http://localhost:8000/fetchadmin", {
+    let userStatus = await fetch("https://dashboard-backend3-85dw.onrender.com/fetchadmin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const StudentState = (props) => {
 
   const checkTrainer = async () => {
     
-        let userStatus = await fetch("http://localhost:8000/fetchtrainer", {
+        let userStatus = await fetch("https://dashboard-backend3-85dw.onrender.com/fetchtrainer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const StudentState = (props) => {
   }
 
   const checkStudent = async () => {
-    let userStatus = await fetch("http://localhost:8000/fetchstudent", {
+    let userStatus = await fetch("https://dashboard-backend3-85dw.onrender.com/fetchstudent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const StudentState = (props) => {
   }
 
   const checkCounsellor = async () => {
-    let userStatus = await fetch("http://localhost:8000/fetchcounselor", {
+    let userStatus = await fetch("https://dashboard-backend3-85dw.onrender.com/fetchcounselor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ const StudentState = (props) => {
     return userStatus
   }
   const checkCounsellorById = async (id) => {
-    let userStatus = await fetch(`http://localhost:8000/fetchcounselor/${id}`, {
+    let userStatus = await fetch(`https://dashboard-backend3-85dw.onrender.com/fetchcounselor/${id}`, {
       method: "GET",
     });
 
@@ -114,7 +114,7 @@ const StudentState = (props) => {
     return userStatus
   }
   const getAllMainSubCourse = async (id) => {
-    let AllCourse = await fetch(`http://localhost:8000/allSubMainCourse`, {
+    let AllCourse = await fetch(`https://dashboard-backend3-85dw.onrender.com/allSubMainCourse`, {
       method: "GET",
     });
 
@@ -125,7 +125,7 @@ const StudentState = (props) => {
   const getAllBatchCourse = async () => {
   
     try{
-    let allbatchCourse = await fetch("http://localhost:8000/getAllBatches", {
+    let allbatchCourse = await fetch("https://dashboard-backend3-85dw.onrender.com/getAllBatches", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -142,7 +142,7 @@ const StudentState = (props) => {
   }
  
   const getAllMainCourse = async () => {
-    let allMainCourse = await fetch("http://localhost:8000/getAllMainCourse",{
+    let allMainCourse = await fetch("https://dashboard-backend3-85dw.onrender.com/getAllMainCourse",{
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -154,7 +154,7 @@ const StudentState = (props) => {
   }
 
   const getAllDemoListCounselor  = async(id)=>{
-    let counselorDemo = await fetch(`http://localhost:8000/getCounselorDemo/`, {
+    let counselorDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/getCounselorDemo/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -168,7 +168,7 @@ const StudentState = (props) => {
   }
 
   const getTrainerRunningBatch = async (id) => {
-    let runningBatch = await fetch(`http://localhost:8000/getrunningBatchByTrainer`, {
+    let runningBatch = await fetch(`https://dashboard-backend3-85dw.onrender.com/getrunningBatchByTrainer`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -181,7 +181,7 @@ const StudentState = (props) => {
   }
   const getRunningBatchStudent = async (batch) => {
     console.log("getRunningBatchStudent",batch)
-    let runningBatch = await fetch(`http://localhost:8000/getRunningBatchStudent/`, {
+    let runningBatch = await fetch(`https://dashboard-backend3-85dw.onrender.com/getRunningBatchStudent/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -198,7 +198,7 @@ const StudentState = (props) => {
   }
 
   const getRunningBatch = async () => {
-    let runningBatch = await fetch(`http://localhost:8000/getrunningBatch/`, {
+    let runningBatch = await fetch(`https://dashboard-backend3-85dw.onrender.com/getrunningBatch/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -210,7 +210,7 @@ const StudentState = (props) => {
     return runningBatch
   }
   const getRunningBatchByBatchName = async (batch) => {
-    let runningBatch = await fetch(`http://localhost:8000/getrunningBatch/`, {
+    let runningBatch = await fetch(`https://dashboard-backend3-85dw.onrender.com/getrunningBatch/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -224,7 +224,7 @@ const StudentState = (props) => {
   }
 
   const getBatchDetail = async(batch)=>{
-    let batchData = await fetch(`http://localhost:8000/getBatchData/`, {
+    let batchData = await fetch(`https://dashboard-backend3-85dw.onrender.com/getBatchData/`, {
       method: "GET",
       headers: {"batch":batch}
     });
@@ -235,7 +235,7 @@ const StudentState = (props) => {
   }
 
   const getAllCounselor = async () => {
-    let allCounselor = await fetch("http://localhost:8000/getAllCounselor", {
+    let allCounselor = await fetch("https://dashboard-backend3-85dw.onrender.com/getAllCounselor", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -248,7 +248,7 @@ const StudentState = (props) => {
     return allCounselor
   }
   const getAllTrainer = async () => {
-    let allTrainer = await fetch("http://localhost:8000/trainer", {
+    let allTrainer = await fetch("https://dashboard-backend3-85dw.onrender.com/trainer", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -260,7 +260,7 @@ const StudentState = (props) => {
   }
 
   const getAllCounselorStudent = async(id)=>{
-    let counselorStudent = await fetch(`http://localhost:8000/getStudentByCounselor/${id}`, {
+    let counselorStudent = await fetch(`https://dashboard-backend3-85dw.onrender.com/getStudentByCounselor/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -272,7 +272,7 @@ const StudentState = (props) => {
   }
 
   const getSingleStudent = async (id) => {
-    let Student = await fetch(`http://localhost:8000/getuser/${id}`, {
+    let Student = await fetch(`https://dashboard-backend3-85dw.onrender.com/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -287,7 +287,7 @@ const StudentState = (props) => {
   const getReceiveMessage = async (id) => {
 
     console.log('receive message from state=',id)
-    const messageRes = await fetch(`http://localhost:8000/receivemessage`, {
+    const messageRes = await fetch(`https://dashboard-backend3-85dw.onrender.com/receivemessage`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -303,7 +303,7 @@ const StudentState = (props) => {
   }
   const getStudentreceivemessage = async (id) => {
     console.log('student receive message')
-    const messageRes = await fetch(`http://localhost:8000/Studentreceivemessage`, {
+    const messageRes = await fetch(`https://dashboard-backend3-85dw.onrender.com/Studentreceivemessage`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -318,7 +318,7 @@ const StudentState = (props) => {
   }
 
   const getSingleTrainer = async (id) => {
-    let Trainer = await fetch(`http://localhost:8000/trainer/${id}`, {
+    let Trainer = await fetch(`https://dashboard-backend3-85dw.onrender.com/trainer/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -330,7 +330,7 @@ const StudentState = (props) => {
   }
 
   const getAdminId = async()=>{
-    let adminId = await fetch(`http://localhost:8000/getAdminId`, {
+    let adminId = await fetch(`https://dashboard-backend3-85dw.onrender.com/getAdminId`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -342,7 +342,7 @@ const StudentState = (props) => {
   }
 
   const getSingleCounselor = async (id) => {
-    let Counselor = await fetch(`http://localhost:8000/counselor/${id}`, {
+    let Counselor = await fetch(`https://dashboard-backend3-85dw.onrender.com/counselor/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -354,7 +354,7 @@ const StudentState = (props) => {
   }
 
   const getAllStudent = async () => {
-    let allStudent = await fetch('http://localhost:8000/studentpro')
+    let allStudent = await fetch('https://dashboard-backend3-85dw.onrender.com/studentpro')
 
     allStudent = await allStudent.json()
     return allStudent
@@ -362,7 +362,7 @@ const StudentState = (props) => {
 
   const getAttendance = async (date, id, batch) => {
 
-    let attendanceData = await fetch('http://localhost:8000/getStudentAttendance', {
+    let attendanceData = await fetch('https://dashboard-backend3-85dw.onrender.com/getStudentAttendance', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
@@ -378,7 +378,7 @@ const StudentState = (props) => {
   const getRegisterStudent = async()=>{
    
     try{
-    let registerStudent = await fetch('http://localhost:8000/getregisterStudent',{
+    let registerStudent = await fetch('https://dashboard-backend3-85dw.onrender.com/getregisterStudent',{
       method:'GET'
     })
 
@@ -468,7 +468,7 @@ const StudentState = (props) => {
 
   const updatelastCollectionDate = async (nextDueDate, id, status) => {
     console.log('update last date')
-    let updatelastDate = await fetch(`http://localhost:8000/updatelastCollectionDate/${id}`, {
+    let updatelastDate = await fetch(`https://dashboard-backend3-85dw.onrender.com/updatelastCollectionDate/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -478,7 +478,7 @@ const StudentState = (props) => {
   }
 
   const getStudentMonthFeeStatus = async(month, year)=>{
-    let getstudentFeesStatus = await fetch("http://localhost:8000/getStudentMonthFeesStatus",{
+    let getstudentFeesStatus = await fetch("https://dashboard-backend3-85dw.onrender.com/getStudentMonthFeesStatus",{
       method:'GET',
       headers:{"month":month,"year":year}
     })
@@ -489,7 +489,7 @@ const StudentState = (props) => {
 
   const updatePaymentStatus = async (status, id) => {
     console.log('update payment')
-    let updatePayment = await fetch(`http://localhost:8000/updatePaymentStatus/${id}`, {
+    let updatePayment = await fetch(`https://dashboard-backend3-85dw.onrender.com/updatePaymentStatus/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -504,7 +504,7 @@ const StudentState = (props) => {
   const getBatchByTrainer = async (TrainerId) => {
 
     console.log('trainer id =', TrainerId)
-    let trainerBatch = await fetch(`http://localhost:8000/getTrainerBatch/`, {
+    let trainerBatch = await fetch(`https://dashboard-backend3-85dw.onrender.com/getTrainerBatch/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -518,7 +518,7 @@ const StudentState = (props) => {
   }
 
   const getFiles = async (batch, trainerID) => {
-    let getFilesData = await fetch('http://localhost:8000/getfile', {
+    let getFilesData = await fetch('https://dashboard-backend3-85dw.onrender.com/getfile', {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -531,7 +531,7 @@ const StudentState = (props) => {
   }
 
   const totalStudent =async()=>{
-    let total = await fetch('http://localhost:8000/getAllStudent',{
+    let total = await fetch('https://dashboard-backend3-85dw.onrender.com/getAllStudent',{
                 method:'GET'
   })
 
@@ -540,7 +540,7 @@ const StudentState = (props) => {
   }
 
   const newStudent = async(currentMonth)=>{
-    let newTotal = await fetch(`http://localhost:8000/getNewStudent/${currentMonth}`,{
+    let newTotal = await fetch(`https://dashboard-backend3-85dw.onrender.com/getNewStudent/${currentMonth}`,{
                 method:'GET'
         })
 
@@ -550,7 +550,7 @@ const StudentState = (props) => {
 
   const totalNewTrainerStudent = async(trainerId)=>{
     let month = (new Date().getMonth() + 1).toString().padStart(2, '0');
-    let trainerStudent = await fetch(`http://localhost:8000/getNewTrainerStudent/`,{
+    let trainerStudent = await fetch(`https://dashboard-backend3-85dw.onrender.com/getNewTrainerStudent/`,{
       method:'GET',
       headers:{"month":month,"id":trainerId}
 })
@@ -561,7 +561,7 @@ return trainerStudent.newStudent
 
   const totalNewCounselorStudent = async(counselorId)=>{
     let month = (new Date().getMonth() + 1).toString().padStart(2, '0');
-    let trainerStudent = await fetch(`http://localhost:8000/getNewCounselorStudent/`,{
+    let trainerStudent = await fetch(`https://dashboard-backend3-85dw.onrender.com/getNewCounselorStudent/`,{
       method:'GET',
       headers:{"month":month,"id":counselorId}
 })
@@ -571,7 +571,7 @@ return trainerStudent.newStudent
   }
 
   const getTotalFees = async()=>{
-    let totalFees = await fetch(`http://localhost:8000/getTotalFees`,{
+    let totalFees = await fetch(`https://dashboard-backend3-85dw.onrender.com/getTotalFees`,{
       method:'GET',
 })
 
@@ -579,7 +579,7 @@ return trainerStudent.newStudent
     return totalFees
   }
   const getCounselorTotalFees = async(id)=>{
-    let totalFees = await fetch(`http://localhost:8000/getCounselorTotalFees`,{
+    let totalFees = await fetch(`https://dashboard-backend3-85dw.onrender.com/getCounselorTotalFees`,{
       method:'GET',
       headers:{"id":id}
 })
@@ -591,7 +591,7 @@ return trainerStudent.newStudent
   {
     let month = new Date().getMonth()
     month = month + 1
-    let totalFees = await fetch(`http://localhost:8000/getCounselorNewTotalFees`,{
+    let totalFees = await fetch(`https://dashboard-backend3-85dw.onrender.com/getCounselorNewTotalFees`,{
     method:'GET',
     headers:{"month":month,"id":id}
 })
@@ -601,7 +601,7 @@ return trainerStudent.newStudent
   }
 
   const getOldStudent = async () => {
-    let oldStudent = await fetch('http://localhost:8000/getoldStudent')
+    let oldStudent = await fetch('https://dashboard-backend3-85dw.onrender.com/getoldStudent')
 
     oldStudent = await oldStudent.json()
     return oldStudent
@@ -612,20 +612,20 @@ return trainerStudent.newStudent
   }
 
 const getTrainerDemo = async(id)=>{
-    let trainerDemo = await fetch(`http://localhost:8000/getDemoesByTrainer/${id}`)
+    let trainerDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/getDemoesByTrainer/${id}`)
 
     trainerDemo = await trainerDemo.json()
     return trainerDemo
 }
 const getCounselorDemo = async(id)=>{
-    let counselorDemo = await fetch(`http://localhost:8000/getDemoesByCounselor/${id}`)
+    let counselorDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/getDemoesByCounselor/${id}`)
 
     counselorDemo = await counselorDemo.json()
     return counselorDemo
 }
 const getTrainerNewDemo = async(id,month)=>{
   console.log('state new demo =',month)
-    let trainerDemo = await fetch(`http://localhost:8000/getNewDemoesByTrainer/${id}`,{
+    let trainerDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/getNewDemoesByTrainer/${id}`,{
       method:'GET',
       headers:{"month":month}
     })
@@ -635,7 +635,7 @@ const getTrainerNewDemo = async(id,month)=>{
 }
 const getCounselorNewDemo = async(id,month)=>{
   console.log('state new demo =',month,id)
-    let counselorDemo = await fetch(`http://localhost:8000/getNewDemoesByCounselor`,{
+    let counselorDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/getNewDemoesByCounselor`,{
       method:'GET',
       headers:{"month":month,"id":id}
     })
@@ -646,7 +646,7 @@ const getCounselorNewDemo = async(id,month)=>{
 const getAllDemo = async()=>{
 
     try{
-  let AllDemo = await fetch(`http://localhost:8000/Getdemo`,{
+  let AllDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/Getdemo`,{
     method:'GET',
   })
 
@@ -665,7 +665,7 @@ catch(error){
 }
 }
 const getDemo = async()=>{
-  let AllDemo = await fetch(`http://localhost:8000/GetAlldemo`,{
+  let AllDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/GetAlldemo`,{
     method:'GET',
   })
 
@@ -674,7 +674,7 @@ const getDemo = async()=>{
 }
 const getNewDemo = async(month)=>{
   console.log('state month =',month)
-  let newDemo = await fetch(`http://localhost:8000/getNewDemo/${month}`,{
+  let newDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/getNewDemo/${month}`,{
     method:'GET',
   })
 
@@ -685,7 +685,7 @@ const getNewDemo = async(month)=>{
 
 const getCounselorRegisterStudent = async(id)=>{
   console.log('counselor register =',id)
-  let registerCounselorStudent = await fetch(`http://localhost:8000/getCounselorRegisterStudent`,{
+  let registerCounselorStudent = await fetch(`https://dashboard-backend3-85dw.onrender.com/getCounselorRegisterStudent`,{
     method:'GET',
     headers:{"id":id}
   })
@@ -698,7 +698,7 @@ const getCounselorNewRegisterStudent = async(id)=>{
   let month = new Date().getMonth()
   month = month+1<10?`0${month+1}`:month+1
   console.log('counselor register =',id)
-  let registerCounselorStudent = await fetch(`http://localhost:8000/getCounselorNewRegisterStudent`,{
+  let registerCounselorStudent = await fetch(`https://dashboard-backend3-85dw.onrender.com/getCounselorNewRegisterStudent`,{
     method:'GET',
     headers:{"month":month,"id":id}
   })
@@ -709,7 +709,7 @@ const getCounselorNewRegisterStudent = async(id)=>{
 
 const getPendingStudentAssignment = async(id,batch)=>{
   console.log("state id=",id)
-  let pendingAssignment = await fetch(`http://localhost:8000/getStudentPendingAssignment/${id}`,{
+  let pendingAssignment = await fetch(`https://dashboard-backend3-85dw.onrender.com/getStudentPendingAssignment/${id}`,{
     method:'GET',
     headers:{"batch":batch}
   })
@@ -719,7 +719,7 @@ const getPendingStudentAssignment = async(id,batch)=>{
 }
 const getSubmittedStudentAssignment = async(id,batch)=>{
   console.log("state id=",id,batch)
-  let submittedAssignment = await fetch(`http://localhost:8000/getStudentSubmittedAssignment/${id}`,{
+  let submittedAssignment = await fetch(`https://dashboard-backend3-85dw.onrender.com/getStudentSubmittedAssignment/${id}`,{
     method:'GET',
     headers:{"batch":batch}
   })
@@ -730,7 +730,7 @@ const getSubmittedStudentAssignment = async(id,batch)=>{
 
 
 const getTrainerAssignment = async(batch)=>{
-  let trainerAssignment = await fetch("http://localhost:8000/getTrainerAssignment",{
+  let trainerAssignment = await fetch("https://dashboard-backend3-85dw.onrender.com/getTrainerAssignment",{
     method:'GET',
     headers:{"batch":batch}
   })
@@ -740,7 +740,7 @@ const getTrainerAssignment = async(batch)=>{
 }
 
 const getStudentNotesPdf = async(id,batch)=>{
-  let TrainerNotesPdf = await fetch(`http://localhost:8000/getStudentNotesPdf/${id}`,{
+  let TrainerNotesPdf = await fetch(`https://dashboard-backend3-85dw.onrender.com/getStudentNotesPdf/${id}`,{
     method:'GET',
     headers:{"batch":batch}
   })
@@ -749,7 +749,7 @@ const getStudentNotesPdf = async(id,batch)=>{
  return(TrainerNotesPdf)
 }
 const getStudentNotesLink = async(id,batch)=>{
-  let TrainerNotesLink = await fetch(`http://localhost:8000/getStudentNotesLink/${id}`,{
+  let TrainerNotesLink = await fetch(`https://dashboard-backend3-85dw.onrender.com/getStudentNotesLink/${id}`,{
     method:'GET',
     headers:{"batch":batch}
   })
@@ -758,7 +758,7 @@ const getStudentNotesLink = async(id,batch)=>{
  return(TrainerNotesLink)
 }
 const getTrainerNotesPdf = async(batch)=>{
-  let TrainerNotesPdf = await fetch("http://localhost:8000/getTrainerNotesPdf",{
+  let TrainerNotesPdf = await fetch("https://dashboard-backend3-85dw.onrender.com/getTrainerNotesPdf",{
     method:'GET',
     headers:{"batch":batch}
   })
@@ -767,7 +767,7 @@ const getTrainerNotesPdf = async(batch)=>{
  return(TrainerNotesPdf)
 }
 const getTrainerNotesLink = async(batch)=>{
-  let TrainerNotesLink = await fetch("http://localhost:8000/getTrainerNotesLink",{
+  let TrainerNotesLink = await fetch("https://dashboard-backend3-85dw.onrender.com/getTrainerNotesLink",{
     method:'GET',
     headers:{"batch":batch}
   })
@@ -790,7 +790,7 @@ const getTrainerNotesLink = async(batch)=>{
 //   const year = date.getFullYear();
 
 
-//   let res = await fetch(`http://localhost:8000/getUpcomingDemoesByCounselor`, {
+//   let res = await fetch(`https://dashboard-backend3-85dw.onrender.com/getUpcomingDemoesByCounselor`, {
 //     method: "POST",
 //     headers: {
 //         "Content-Type": "application/json"
@@ -821,7 +821,7 @@ const counselorUpcomimgDemo = async (id) => {
 
   const formattedTime = `${hours}:${minutes}${period}`;
 
-  const res = await fetch("http://localhost:8000/getUpcomingDemoesByCounselor", {
+  const res = await fetch("https://dashboard-backend3-85dw.onrender.com/getUpcomingDemoesByCounselor", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -854,7 +854,7 @@ const trainerUpcomimgDemo = async(id)=>{
   const year = date.getFullYear();
 
 
-  let res = await fetch("http://localhost:8000/getTrainerUpcomingDemoes", {
+  let res = await fetch("https://dashboard-backend3-85dw.onrender.com/getTrainerUpcomingDemoes", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -880,7 +880,7 @@ const UpcomimgDemo = async()=>{
   const year = date.getFullYear();
 
 
-  let res = await fetch("http://localhost:8000/getupcomingDemoes", {
+  let res = await fetch("https://dashboard-backend3-85dw.onrender.com/getupcomingDemoes", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -908,7 +908,7 @@ const UpcomimgTrainerDemo = async(id)=>{
   const year = date.getFullYear();
 
 
-  let res = await fetch(`http://localhost:8000/getupcomingtrainerDemoes/${id}`, {
+  let res = await fetch(`https://dashboard-backend3-85dw.onrender.com/getupcomingtrainerDemoes/${id}`, {
     method: "POST",
     headers: {
         "Content-Type": "application/json"

@@ -55,7 +55,7 @@ const Assignment = (props) => {
         }
 
         try {
-            const res = await fetch('http://localhost:8000/submititem', {
+            const res = await fetch('https://dashboard-backend3-85dw.onrender.com/submititem', {
                 method: 'POST',
                 body: formData,
             });
@@ -86,7 +86,7 @@ const Assignment = (props) => {
     }
 
     const getTrainerdata = async () => {
-        const res = await fetch("http://localhost:8000/getuploadAssignmentUrl", {
+        const res = await fetch("https://dashboard-backend3-85dw.onrender.com/getuploadAssignmentUrl", {
 
             method: "GET",
             headers: {
@@ -105,7 +105,7 @@ const Assignment = (props) => {
 
     const downloaduser = async (url) => {
 
-        const res2 = await fetch(`http://localhost:8000/files/${url}`, {
+        const res2 = await fetch(`https://dashboard-backend3-85dw.onrender.com/files/${url}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"

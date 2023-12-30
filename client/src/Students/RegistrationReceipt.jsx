@@ -25,7 +25,7 @@ function RegistrationReceipt() {
     <center id="top">
       <img src={logo}/>
       <div className="info">
-        <h2>Uncodemy</h2>
+        <h2 class="uncodemy-text">Uncodemy</h2>
       </div>
      
     </center>

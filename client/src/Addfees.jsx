@@ -42,7 +42,7 @@ function Addfee() {
 
         console.log('form data =', formData)
 
-        const res = await fetch('http://localhost:8000/FeeDetail', {
+        const res = await fetch('https://dashboard-backend3-85dw.onrender.com/FeeDetail', {
             method: 'POST',
             body: formData,
         });

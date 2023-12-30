@@ -97,7 +97,7 @@ const RegisterStudentAdd = () => {
     ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
     try {
-      const res = await fetch('http://localhost:8000/registerStudent', {
+      const res = await fetch('https://dashboard-backend3-85dw.onrender.com/registerStudent', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -109,7 +109,7 @@ const RegisterStudentAdd = () => {
 
       const data = await res.json();
 
-      const googleSheetResponse = await fetch('http://localhost:8000/google-sheet-data', {
+      const googleSheetResponse = await fetch('https://dashboard-backend3-85dw.onrender.com/google-sheet-data', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -121,7 +121,7 @@ const RegisterStudentAdd = () => {
       ContextValue.updateProgress(100)
       ContextValue.updateBarStatus(false)
       ContextValue.SuccessMsg()
-      navigate('/admin/registrationReceipt',{state:{data:data}})
+      navigate('/Add-Registered-Student/registrationReceipt',{state:{data:data}})
       EmptyFilled()
       console.log("Data", data)
     }

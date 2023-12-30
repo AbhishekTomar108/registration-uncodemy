@@ -65,7 +65,7 @@ export default function Home() {
   const [getuserdata, setUserdata] = useState("");
   console.log("trainer");
   const getTrainerdata = async () => {
-    const res = await fetch("http://localhost:8000/trainer", {
+    const res = await fetch("https://dashboard-backend3-85dw.onrender.com/trainer", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -83,153 +83,55 @@ export default function Home() {
     }
   };
 
-  async function fetchAdminStatus() {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-    try {
-      const status = await ContextValue.checkAdmin();
+  // async function fetchAdminStatus() {
+  //   ContextValue.updateProgress(30);
+  //   ContextValue.updateBarStatus(true);
+  //   try {
+  //     const status = await ContextValue.checkAdmin();
 
-      console.log("status of admin =", status);
-      if (status.status === "active") {
-        getdata();
-        getTrainerdata();
-        getCounselorData();
-        getTotalStudent();
-        getNewStudent();
-        getTotalFees();
-        getRunningBatch();
-        getRegisteredStudent();
-        getAllDemo();
-        getNewDemo();
-        getAllBatches();
-        getUpcomingDemo();
-        getAllCourses();
-      } else {
-        navigation("/");
-        alert("you are not authorized");
-        ContextValue.updateProgress(100);
-        ContextValue.updateBarStatus(false);
-      }
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went Wrong Try Again",
-      });
-      ContextValue.updateProgress(100);
-      ContextValue.updateBarStatus(false);
-      console.error("Error fetching admin status:", error);
-    }
-  }
+  //     console.log("status of admin =", status);
+  //     if (status.status === "active") {
+  //       getdata();
+  //       getTrainerdata();
+  //       getCounselorData();
+  //       getTotalStudent();
+  //       getNewStudent();
+  //       getTotalFees();
+  //       getRunningBatch();
+  //       getRegisteredStudent();
+  //       getAllDemo();
+  //       getNewDemo();
+  //       getAllBatches();
+  //       getUpcomingDemo();
+  //       getAllCourses();
+  //     } else {
+  //       navigation("/");
+  //       // alert("you are not authorized");
+  //       ContextValue.updateProgress(100);
+  //       ContextValue.updateBarStatus(false);
+  //     }
+  //   } catch (error) {
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: "Something went Wrong Try Again",
+  //     });
+  //     ContextValue.updateProgress(100);
+  //     ContextValue.updateBarStatus(false);
+  //     console.error("Error fetching admin status:", error);
+  //   }
+  // }
 
   useEffect(() => {
-    fetchAdminStatus();
+    // fetchAdminStatus();
   }, []);
 
-  const getAllBatches = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
 
-    let allCourse = await ContextValue.getAllBatchCourse();
 
-    setWeekDaysbatch(allCourse.batchCourse[0].WeekDaysBatch);
-    setWeekEndBatch(allCourse.batchCourse[0].WeekEndBatch);
+ 
 
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-  const getAllCourses = async () => {
-    console.log("all course function");
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-
-    let allCourse = await ContextValue.getAllMainSubCourse();
-
-    console.log("all course =", allCourse);
-    setAllCourse(allCourse.allCourse);
-    setCourse(allCourse.courses);
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getUpcomingDemo = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-
-    let upcoming = await ContextValue.UpcomimgDemo();
-    setUpcomingDemoList(upcoming.Demo);
-    setUpcomingDemoStudent(upcoming.totalDemoStudent);
-
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getRegisteredStudent = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-
-    let registeredStudent = await ContextValue.getRegisterStudent();
-    setRegister(registeredStudent);
-    setCurrentRegister(registeredStudent);
-
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getRunningBatch = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-
-    const runningBatch = await ContextValue.getRunningBatch();
-    setTotalRunningBatch(runningBatch.runningBatches.length);
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getTotalFees = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-    let totalFees = await ContextValue.getTotalFees();
-    setTotalAmount(totalFees);
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getTotalStudent = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-
-    let TotalStudent = await ContextValue.totalStudent();
-
-    setTotal(TotalStudent);
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getNewStudent = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-
-    let month = (new Date().getMonth() + 1).toString().padStart(2, "0");
-
-    let newStudent = await ContextValue.newStudent(month);
-    setNewTotal(newStudent);
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getCounselorData = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-    let counselor = await ContextValue.getAllCounselor();
-    setCounselor(counselor.counselorData);
-    localStorage.setItem(
-      "allCounselor",
-      JSON.stringify(counselor.counselorData)
-    );
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
+ 
+ 
 
   const showMessagedialog = async (id) => {
     const { value: text } = await Swal.fire({
@@ -248,7 +150,7 @@ export default function Home() {
 
     let checkId = [{ id }];
 
-    let sendData = await fetch("http://localhost:8000/sendmessage", {
+    let sendData = await fetch("https://dashboard-backend3-85dw.onrender.com/sendmessage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text, checkid: checkId, from: "admin" }),
@@ -257,177 +159,15 @@ export default function Home() {
     let fetchData = await sendData.json();
   };
 
-  const getdata = async () => {
-    const res = await fetch("http://localhost:8000/getdata", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
 
-    const data = await res.json();
-    console.log("student data =", data);
-    setTotalItem(data.length);
-    localStorage.setItem("allStudent", JSON.stringify(data));
-
-    // total student new student
-    let total = 0;
-    let newjoin = 0;
-    let currentMonthStudent = 0;
-    let pastMonthStudent = 0;
-    let pastSevenDaysStudent = 0;
-
-    setTotalStudent(total);
-    setNewStudent(newjoin);
-    setPastSevenStudent(pastSevenDaysStudent);
-
-    setProcessBar(
-      parseInt(
-        ((currentMonthStudent - pastMonthStudent) / pastMonthStudent) * 100
-      )
-    );
-    setPastSevenStudent(
-      parseInt(
-        ((pastSevenDaysStudent - currentMonthStudent) / pastSevenDaysStudent) *
-          100
-      )
-    );
-    let processBar =
-      ((currentMonthStudent - pastMonthStudent) / pastMonthStudent) * 100;
-
-    if (res.status === 422 || !data) {
-    } else {
-      setAllStudent(data);
-      setAllStudentData(data);
-      setCurrentStudent(data);
-    }
-  };
 
   //sweetalert
 
   //Delete student
-  const deleteuser = async (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (user === "student") {
-          deleteStudent(id);
-        } else if (user === "trainer") {
-          deleteTrainer(id);
-        } else if (user === "counselor") {
-          deleteCounselor(id);
-        }
-      }
-    });
-  };
 
-  const deleteStudent = async (id) => {
-    fetch(`http://localhost:8000/deleteuser/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        const deletedata = response.json();
 
-        if (deletedata.status === 422 || !deletedata) {
-          console.log("error");
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="">Why do I have this issue?</a>',
-          });
-        } else {
-          // setDLTdata(deletedata)
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
-          getdata();
-        }
-      })
-      .catch((error) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-          footer: '<a href="">Why do I have this issue?</a>',
-        });
-      });
-  };
-  const deleteTrainer = async (id) => {
-    fetch(`http://localhost:8000/deletetrainer/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        const deletedata = response.json();
-
-        if (deletedata.status === 422 || !deletedata) {
-          console.log("error");
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="">Why do I have this issue?</a>',
-          });
-        } else {
-          console.log("user deleted", deletedata);
-          // setDLTdata(deletedata)
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
-          getdata();
-        }
-      })
-      .catch((error) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      });
-  };
-  const deleteCounselor = async (id) => {
-    fetch(`http://localhost:8000/deletecounselor/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        const deletedata = response.json();
-
-        if (deletedata.status === 422 || !deletedata) {
-          console.log("error");
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="">Why do I have this issue?</a>',
-          });
-        } else {
-          console.log("user deleted", deletedata);
-          // setDLTdata(deletedata)
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
-          getdata();
-        }
-      })
-      .catch((error) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-          footer: '<a href="">Why do I have this issue?</a>',
-        });
-      });
-  };
+ 
+ 
   //search
   const fetchQueryData = (Query) => {
     if (user === "student") {
@@ -507,44 +247,9 @@ export default function Home() {
     navigate("Add-Registered-Student");
   };
 
-  const getAllDemo = async () => {
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-    const Demo = await ContextValue.getAllDemo();
-    setAllDemoList(Demo.Demo);
-    setDemoStudentData(Demo.totalDemoStudent);
+ 
 
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
-
-  const getNewDemo = async () => {
-    let month = new Date().getMonth();
-    let MonthName = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-
-    ContextValue.updateProgress(30);
-    ContextValue.updateBarStatus(true);
-
-    const demo = await ContextValue.getNewDemo(MonthName[month]);
-
-    setNewDemoList(demo.Demo);
-    setNewDemoStudentData(demo.totalDemoStudent);
-    ContextValue.updateProgress(100);
-    ContextValue.updateBarStatus(false);
-  };
+ 
 
   const moveToAllDemo = () => {
     navigate("All-Demo", {
@@ -615,88 +320,6 @@ export default function Home() {
                 </div>      
               
               
-                <div className="col-xl-3 col-xxl-3 col-sm-6">
-                  <div className="widget-stat card p-0 bg-secondary">
-                    <div className="card-body">
-                      <div className="media">
-                        <span className="mr-3">
-                          <i class="fa-regular fa-address-card" />
-                        </span>
-                        <div
-                          className="media-body text-white"
-                          onClick={moveToRegisterStudent}
-                        >
-                          <p className="mb-1">Total Registration</p>
-                          <h3 className="text-white">
-                            {register && register.length}
-                          </h3>
-                          {/* <div className="progress mb-2 bg-white">
-                        <div
-                          className="progress-bar progress-animated bg-light"
-                          style={{ width: "76%" }}
-                        />
-                      </div> */}
-                          {/* <small>76% Increase in 20 Days</small> */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-             
-             
-                <div className="col-xl-3 col-xxl-3 col-sm-6">
-                  <div className="widget-stat card p-0 bg-danger">
-                    <div className="card-body">
-                      <div className="media">
-                        <span className="mr-3">
-                          <i class="fa-regular fa-newspaper" />
-                        </span>
-                        <div
-                          className="media-body text-white"
-                          onClick={moveToAllCourses}
-                        >
-                          <p className="mb-1">All Course</p>
-                          <h3 className="text-white">
-                            {allCourse && allCourse.length}
-                          </h3>
-                          {/* <div className="progress mb-2 bg-white">
-                        <div
-                          className="progress-bar progress-animated bg-light"
-                          style={{ width: "30%" }}
-                        />
-                      </div> */}
-                          {/* <small>30% Increase in 30 Days</small> */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-3 col-xxl-3 col-sm-6">
-                  <div className="widget-stat card p-0 bg-danger">
-                    <div className="card-body">
-                      <div className="media">
-                        <span className="mr-3">
-                        <i class="fa-solid fa-plus"/>
-                        </span>
-                        <div
-                          className="media-body text-white"
-                          onClick={moveToAddCourses}
-                        >
-                          <p className="mb-1">Add counselor</p>
-                         
-                          {/* <div className="progress mb-2 bg-white">
-                        <div
-                          className="progress-bar progress-animated bg-light"
-                          style={{ width: "30%" }}
-                        />
-                      </div> */}
-                          {/* <small>30% Increase in 30 Days</small> */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             
 

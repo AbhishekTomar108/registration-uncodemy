@@ -4,4 +4,20 @@
     margin-left: 0;
 }
 
+#invoice-POS{
+    width: 100vw;
+}
+
+img{
+    width: 15%;
+}
+
+#top{
+    margin-top: 20px;
+}
+
+.uncodemy-text{
+    font-size: 1.5rem;
+}
+
 }

@@ -93,6 +93,7 @@ import BarLoading from '../Students/BarLoading'
 import ForgetPassword from './ForgetPassword'
 import AddCommerceData from './Counselor/AddCommerceData'
 import RegistrationReceipt from '../Students/RegistrationReceipt'
+import RegistartionHome from './RegistartionHome'
 
 // import Navbaar from './components/Navbaar';
 export default function App() {
@@ -105,11 +106,14 @@ export default function App() {
             <Route exact path='/loading' element={<BarLoading />} />
             <Route exact path='/filter' element={<FilterSection />} />
             <Route exact path='/googlemeet' element={<EmbedGoogleMeet />} />
-            <Route exact path='/' element={<LogIn />} />
+            {/* <Route exact path='/' element={<LogIn />} /> */}
+            <Route exact path='/' element={<Home />} />
+            {/* <Route exact path='/' element={<RegistartionHome />} /> */}
             <Route exact path='/addCommerceData' element={<AddCommerceData />} />
             <Route exact path='/Forget-Password' element={<ForgetPassword />} />
             <Route exact path='admin/' element={<Home />} />
-            <Route exact path='admin/Add-Registered-Student' element={<RegisterStudentAdd/>} />
+            {/* <Route exact path='admin/Add-Registered-Student' element={<RegisterStudentAdd/>} /> */}
+            <Route exact path='/Add-Registered-Student' element={<RegisterStudentAdd/>} />
             <Route exact path='admin/AllCourse' element={<AllCourse />} />
             <Route exact path='admin/AllBatchTiming' element={<AllBatchTiming />} />
             <Route exact path='admin/Registered-Student' element={<RegisterStudent />} />
@@ -540,7 +544,8 @@ export default function App() {
             <Route exact path="/ReadMessage" element={<ReadMessage />} />
             {/* <Route exact path="admin/Running-batches/Student" element={<RunningBatchStudent/>} /> */}
             {/* <Route exact path="admin/old-batches/Student" element={<RunningBatchStudent/>} /> */}
-            <Route exact path="admin/registrationReceipt" element={<RegistrationReceipt/>} />
+            {/* <Route exact path="admin/registrationReceipt" element={<RegistrationReceipt/>} /> */}
+            <Route exact path="Add-Registered-Student/registrationReceipt" element={<RegistrationReceipt/>} />
           </Routes>
           <Footer />
         </StudentState >

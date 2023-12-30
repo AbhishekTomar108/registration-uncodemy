@@ -22,7 +22,7 @@ export default function Student() {
 
   const receivemessage = async () => {
     console.log('receive message')
-    const messageRes = await fetch(`http://localhost:8000/receivemessage/${id}`, {
+    const messageRes = await fetch(`https://dashboard-backend3-85dw.onrender.com/receivemessage/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ export default function Student() {
 
 
 
-    const res = await fetch(`http://localhost:8000/getuser/${id}`, {
+    const res = await fetch(`https://dashboard-backend3-85dw.onrender.com/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

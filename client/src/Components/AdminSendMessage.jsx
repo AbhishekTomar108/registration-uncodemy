@@ -327,7 +327,7 @@ const individualCheckFunc =(allUser)=>{
     ContextValue.updateBarStatus(true)
 
       try{
-      let data = await fetch('http://localhost:8000/sendmessage', {
+      let data = await fetch('https://dashboard-backend3-85dw.onrender.com/sendmessage', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
@@ -442,7 +442,7 @@ const individualCheckFunc =(allUser)=>{
     console.log("message data =",messageData)
 
     console.log('receive message',id)
-    const messageRes = await fetch(`http://localhost:8000/receiveusermessage/${id}`, {
+    const messageRes = await fetch(`https://dashboard-backend3-85dw.onrender.com/receiveusermessage/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
