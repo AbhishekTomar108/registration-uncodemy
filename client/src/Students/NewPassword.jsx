@@ -42,7 +42,7 @@ export default function Newpassword() {
     e.preventDefault()
 
     if (password.newPassword === password.confirmPassword) {
-        let data = await fetch('https://dashboard-backend3-85dw.onrender.com/newpassword', {
+        let data = await fetch('http://localhost:8000/newpassword', {
             method: 'POST',
             headers: {
                 "auth-token": token,

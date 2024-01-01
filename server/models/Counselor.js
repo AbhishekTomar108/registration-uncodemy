@@ -38,6 +38,10 @@ const CounselorSchema = new mongoose.Schema({
         type: String,
 
     },
+    counselorNumber: {
+        type: String,
+
+    },
     
     counselorReference: {
         type: String,

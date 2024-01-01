@@ -12,7 +12,7 @@ export default function VideoAssignment(props) {
     const getTrainerdata = async (batch) => 
     {
         console.log('video get func =',batch)
-        const res = await fetch(`https://dashboard-backend3-85dw.onrender.com/getuploadVideoUrl`, {
+        const res = await fetch(`http://localhost:8000/getuploadVideoUrl`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

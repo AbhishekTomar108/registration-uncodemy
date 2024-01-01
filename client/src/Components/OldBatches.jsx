@@ -32,7 +32,7 @@ const OldBatches = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://dashboard-backend3-85dw.onrender.com/deleteBatch/${id}`, {
+        fetch(`http://localhost:8000/deleteBatch/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
@@ -78,7 +78,7 @@ const OldBatches = () => {
 
   const getOldBatch = async () => {
 
-    let oldBatches = await fetch('https://dashboard-backend3-85dw.onrender.com/getOldBatch');
+    let oldBatches = await fetch('http://localhost:8000/getOldBatch');
 
     oldBatches = await oldBatches.json()
 

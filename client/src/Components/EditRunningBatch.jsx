@@ -112,7 +112,7 @@ const EditRunningBatch = () => {
         ContextValue.updateBarStatus(true)
 
       try {
-          let runningTrainer = await fetch('https://dashboard-backend3-85dw.onrender.com/getRunningBatchTrainer', {
+          let runningTrainer = await fetch('http://localhost:8000/getRunningBatchTrainer', {
               method: 'POST',
               headers: { "Content-Type" : "application/json" },
               body: JSON.stringify({ TrainerID : trainer._id })
@@ -146,7 +146,7 @@ const EditRunningBatch = () => {
 
       const getTrainer = async () => {
 
-        const res = await fetch("https://dashboard-backend3-85dw.onrender.com/trainer", {
+        const res = await fetch("http://localhost:8000/trainer", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -243,7 +243,7 @@ const updateBatch = async () => {
 
   ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
-  let addedNewBatch = await fetch(`https://dashboard-backend3-85dw.onrender.com/updateBatch/${runningBatch._id}`, {
+  let addedNewBatch = await fetch(`http://localhost:8000/updateBatch/${runningBatch._id}`, {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({tempInpVal})

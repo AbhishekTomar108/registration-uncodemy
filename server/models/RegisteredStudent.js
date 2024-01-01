@@ -51,6 +51,10 @@ const RegisterStudentSchema = new mongoose.Schema({
         type: String,
 
     },
+    counselorNumber: {
+        type: String,
+
+    },
     CounselorId: {
         type: String,
 
@@ -61,6 +65,10 @@ const RegisterStudentSchema = new mongoose.Schema({
 
     },
     CourseFees: {
+        type: String,
+
+    },
+    RemainingFees: {
         type: String,
 
     },

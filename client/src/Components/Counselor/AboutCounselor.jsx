@@ -82,7 +82,7 @@ useEffect(()=>{
 
     console.log('id =',id)
 
-    let CounselorStudent = await fetch('https://dashboard-backend3-85dw.onrender.com/getStudentByCounselor', {
+    let CounselorStudent = await fetch('http://localhost:8000/getStudentByCounselor', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ CounselorID: id })
@@ -112,7 +112,7 @@ useEffect(()=>{
     let checkId = [{ id }]
 
     console.log('value of swal =', text, checkId)
-    let sendData = await fetch('https://dashboard-backend3-85dw.onrender.com/sendmessage', {
+    let sendData = await fetch('http://localhost:8000/sendmessage', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text, checkid: checkId, from: "Counselor" })
@@ -123,7 +123,7 @@ useEffect(()=>{
   }
   // const getdata = async (counselorName) => {
 
-  //   let studentData = await fetch('https://dashboard-backend3-85dw.onrender.com/getStudentByCounselor', {
+  //   let studentData = await fetch('http://localhost:8000/getStudentByCounselor', {
   //     method: 'POST',
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify({ CounselorID: counselorName })
@@ -188,7 +188,7 @@ useEffect(()=>{
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://dashboard-backend3-85dw.onrender.com/deleteuser/${id}`, {
+        fetch(`http://localhost:8000/deleteuser/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"

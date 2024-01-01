@@ -27,7 +27,7 @@ const ForgetPassword = () => {
         ContextValue.updateProgress(30)
         ContextValue.updateBarStatus(true)
 
-        let data = await fetch(`https://dashboard-backend3-85dw.onrender.com/updatePassword/${user}`, {
+        let data = await fetch(`http://localhost:8000/updatePassword/${user}`, {
 
         method: "POST",
         headers: {

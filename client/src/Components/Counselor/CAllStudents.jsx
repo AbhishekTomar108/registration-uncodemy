@@ -20,7 +20,7 @@ export default function AllStudents() {
 
   const getdata = async (id) => {
 
-    let studentData = await fetch('https://dashboard-backend3-85dw.onrender.com/getStudentByCounselor', {
+    let studentData = await fetch('http://localhost:8000/getStudentByCounselor', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ CounselorID: id })

@@ -58,6 +58,7 @@ const RegisterStudentAdd = () => {
     Course: "",
     subCourse:"",
     Counselor: "",
+    counselorNumber:"",
     CounselorId: "",
     RegistrationFees: "",
     paidFees: "",
@@ -97,7 +98,7 @@ const RegisterStudentAdd = () => {
     ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
     try {
-      const res = await fetch('https://dashboard-backend3-85dw.onrender.com/registerStudent', {
+      const res = await fetch('http://localhost:8000/registerStudent', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -109,7 +110,7 @@ const RegisterStudentAdd = () => {
 
       const data = await res.json();
 
-      const googleSheetResponse = await fetch('https://dashboard-backend3-85dw.onrender.com/google-sheet-data', {
+      const googleSheetResponse = await fetch('http://localhost:8000/google-sheet-data', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -278,6 +279,7 @@ const RegisterStudentAdd = () => {
                             <label className="form-label">Number</label>
                             <input
                               type="number"
+                              max="10"
                               value={inpval.Number}
                               onChange={(e) =>{
                                 setINP({
@@ -341,6 +343,7 @@ const RegisterStudentAdd = () => {
                             <label className="form-label">Parent Number</label>
                             <input
                               type="number"
+                              max="10"
                               value={inpval.Pnumber}
                               onChange={(e) =>{
                                 setINP({
@@ -382,7 +385,7 @@ const RegisterStudentAdd = () => {
 
                         <div className="col-lg-6 col-md-6 col-sm-12">
                           <div className="form-group">
-                            <label className="form-label">Counselor</label>
+                            <label className="form-label">Counsellor</label>
                             {counselor && 
               <div>
             <select className="counselor-section custom-select mr-sm-2" required name='counselor' onChange={(e) => setCounselorData(e)}>
@@ -396,6 +399,29 @@ const RegisterStudentAdd = () => {
             </select>
             </div>
             }
+                          </div>
+                        </div>
+
+                         <div className="col-lg-6 col-md-6 col-sm-12">
+                          <div className="form-group">
+                            <label className="form-label">Counsellor Number</label>
+                            <input
+                              type="number"
+                              max="10"
+                              value={inpval.counselorNumber}
+                              onChange={(e) =>{
+                                setINP({
+                                  ...inpval,
+                                  [e.target.name]: e.target.value,
+                                });
+                                const status = isAllFieldsFilled()
+                                setAllFieldStatus(status)
+                              }
+                              }
+                              name="counselorNumber"
+                              class="form-control"
+                              id="exampleInputPassword1"
+                            />
                           </div>
                         </div>
 
@@ -421,6 +447,7 @@ const RegisterStudentAdd = () => {
                             <label className="form-label">Registration Amount</label>
                             <input
                               type="number"
+                              max="10"
                               value={inpval.RegistrationFees}
                               onChange={(e) =>{
                                 setINP({
@@ -443,6 +470,7 @@ const RegisterStudentAdd = () => {
                             <label className="form-label">Course Fees</label>
                             <input
                               type="number"
+                              max="10"
                               onChange={(e) => {
                                 setINP({
                                   ...inpval,
@@ -560,6 +588,8 @@ const RegisterStudentAdd = () => {
                               <option value="2">2</option>
                               <option value="3">3</option>
                               <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
                             </select>
                           </div>
                         </div>}

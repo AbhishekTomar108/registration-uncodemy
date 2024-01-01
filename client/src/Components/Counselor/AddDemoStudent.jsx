@@ -74,7 +74,7 @@ function AddDemoStudent() {
    let { Name, Email, Background, Trainer, Date, Time, Course, classLink,TrainerId,CounselorId,month,year,day, CounselorName, status } = { ...inpval };
   
    try{
-        const res = await fetch(`https://dashboard-backend3-85dw.onrender.com/adddemoStudent/${data._id}`, {
+        const res = await fetch(`http://localhost:8000/adddemoStudent/${data._id}`, {
             method: 'POST',
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify(inpval)

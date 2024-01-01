@@ -135,7 +135,7 @@ export default function
     console.log('inpval ', inpval,remainingFees)
 
     try {       
-      const res = await fetch('https://dashboard-backend3-85dw.onrender.com/register', {
+      const res = await fetch('http://localhost:8000/register', {
         method: 'POST',
         body: formData,
       });

@@ -69,7 +69,7 @@ function NewBatch() {
     const getRunningBatchTrainer = async (trainer) => {
 
         try {
-            let runningTrainer = await fetch('https://dashboard-backend3-85dw.onrender.com/getRunningBatchTrainer', {
+            let runningTrainer = await fetch('http://localhost:8000/getRunningBatchTrainer', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ TrainerID: trainer._id })
@@ -126,7 +126,7 @@ function NewBatch() {
     }
 
     const getTrainer = async () => {
-        const res = await fetch("https://dashboard-backend3-85dw.onrender.com/trainer", {
+        const res = await fetch("http://localhost:8000/trainer", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -235,7 +235,7 @@ function NewBatch() {
         console.log('new batch =', batch, batchDetail, currentTrainer)
 
         try{
-        let addedNewBatch = await fetch('https://dashboard-backend3-85dw.onrender.com/addNewBatch', {
+        let addedNewBatch = await fetch('http://localhost:8000/addNewBatch', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ Batch: batch, Trainer: currentTrainer.Name, BatchTime: batchDetail.batchTime, Days: batchDetail.daysName, TrainerID: batchDetail.TrainerID, courseName:batchDetail.courseName})

@@ -88,7 +88,7 @@ function Demo() {
 
 
     try {
-      const res = await fetch(`https://dashboard-backend3-85dw.onrender.com/updateDemoStudent/${data._id}`, {
+      const res = await fetch(`http://localhost:8000/updateDemoStudent/${data._id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

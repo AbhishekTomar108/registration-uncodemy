@@ -30,7 +30,7 @@ function UpcomingDemo() {
 
     // const getCounselordemo = async () => {
 
-    //     const res = await fetch("https://dashboard-backend3-85dw.onrender.com/getDemoes", {
+    //     const res = await fetch("http://localhost:8000/getDemoes", {
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "application/json"

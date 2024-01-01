@@ -3,6 +3,8 @@ import html2pdf from 'html2pdf.js';
 import saveAs from 'file-saver';
 import logo from '../Components/img/logo.png'
 import { useLocation } from 'react-router-dom';
+import authSign from '../Components/img/auth-sign.jpg'
+// import {authSign} from '../Components/img/auth-sign.jpg'
 
 function RegistrationReceipt() {
 
@@ -17,6 +19,50 @@ function RegistrationReceipt() {
     html2pdf(content);
   };
       
+  // function downloadPDFWithCustomName() {
+  //   // Replace 'pdfData' with your actual PDF data or a URL to the PDF file
+  //   const pdfData = 'path_to_your_pdf_file.pdf';
+  //   const customFileName = 'custom_name.pdf'; // Replace with your custom file name
+  
+  //   fetch(pdfData)
+  //     .then((response) => response.blob())
+  //     .then((blob) => {
+  //       const link = document.createElement('a');
+  //       link.href = window.URL.createObjectURL(blob);
+  //       link.download = customFileName;
+  //       link.click();
+  //     })
+  //     .catch((error) => console.error('Error:', error));
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  // const generatePdf = () => {
+  //   const content = document.getElementById('element'); // Replace 'element' with the ID of the element you want to convert to PDF
+  
+  //   // Generate PDF using html2pdf
+  //   html2pdf(content);
+  
+  //   // Download the generated PDF with a custom file name
+  //   const pdfPath = 'path_to_your_pdf_file.pdf'; // Replace with the actual path to your PDF file
+  //   const customFileName = 'custom_name.pdf'; // Replace with your custom file name
+  
+  //   const link = document.createElement('a');
+  //   link.href = pdfPath;
+  //   link.download = customFileName;
+  //   link.click();
+  // };
+  
 
   return (
     <>
@@ -24,30 +70,14 @@ function RegistrationReceipt() {
   <div id="invoice-POS">
     <center id="top">
       <img src={logo}/>
-      <div className="info">
-        <h2 class="uncodemy-text">Uncodemy</h2>
-      </div>
      
     </center>
   
     <div id="mid">
-      <div className="info">
-        <h2>Contact Info</h2>
-        <h6>
-          Address : B 14-15, Udhyog Marg, Block B, Sector 1, Noida, Uttar Pradesh 201301
-          {/* <br />
-          Email : JohnDoe@gmail.com */}
-          <br />
-          Phone : 77019 28515
-          <br />
-        </h6>
-      </div>
-
-      <h1 className='heading'>Registration Detail</h1>
-
-    </div>
-
     
+      <h1 className='heading'>Registration Acknowledgement Receipt</h1>
+
+    </div>  
   
     <div id="bot">
       <div id="table">
@@ -65,7 +95,7 @@ function RegistrationReceipt() {
             </tr>
             <tr className="service">
               <td className="tableitem">
-                <h6 className="itemtext">Name</h6>
+                <h6 className="itemtext">Student's Name</h6>
               </td>
              
               <td className="tableitem">
@@ -74,7 +104,7 @@ function RegistrationReceipt() {
             </tr>
             <tr className="service">
               <td className="tableitem">
-                <h6 className="itemtext">Mobile</h6>
+                <h6 className="itemtext">Student's Mobile No.</h6>
               </td>
               
               <td className="tableitem">
@@ -83,7 +113,16 @@ function RegistrationReceipt() {
             </tr>
             <tr className="service">
               <td className="tableitem">
-                <h6 className="itemtext">Course</h6>
+                <h6 className="itemtext">Father's/Guardian Name</h6>
+              </td>
+              
+              <td className="tableitem">
+                <h6 className="itemtext">{data.Pname}</h6>
+              </td>
+            </tr>
+            <tr className="service">
+              <td className="tableitem">
+                <h6 className="itemtext">Course Name</h6>
               </td>
              
               <td className="tableitem">
@@ -116,6 +155,15 @@ function RegistrationReceipt() {
              
               <td className="tableitem">
                 <h6 className="itemtext">{data.RegistrationFees}</h6>
+              </td>
+            </tr>
+            <tr className="service">
+              <td className="tableitem">
+                <h6 className="itemtext">Remaining Fees</h6>
+              </td>
+             
+              <td className="tableitem">
+                <h6 className="itemtext">{data.RemainingFees}</h6>
               </td>
             </tr>
             <tr className="service">
@@ -154,19 +202,64 @@ function RegistrationReceipt() {
                 <h6 className="itemtext">{data.Counselor}</h6>
               </td>
             </tr>
+            <tr className="service">
+              <td className="tableitem">
+                <h6 className="itemtext">Counselor Number</h6>
+              </td>
+             
+              <td className="tableitem">
+                <h6 className="itemtext">{data.counselorNumber}</h6>
+              </td>
+            </tr>
            
           </tbody>
         </table>
       </div>
 
-      <div className='signature-section'>
-        <h2>Authorised Signature</h2>
-        <h2>Student Signature</h2>
+
+      
+            <div className="Signaturee">
+      
+      <div className="authorised-sign">
+      <div className="imaging">
+                {/* <img src="https://d3tl80hy6t5toy.cloudfront.net/wp-content/uploads/2020/04/14131506/Scan-Mar-31-2020-at-2.05-PM-page-3-2-e1586870328676.jpg" alt=""/> */}
+                <img src={authSign} alt=""/>
+            </div>
+            <div className='signature2-section'>
+              <h2>Authorised Signature</h2>
+             
+            </div>
+
+            </div>
+            <div className='signature-section'>
+                <h2>Student Signature</h2>
+            </div>
+        </div>
+
+      <div className="info address-info">
+        <h2><strong>Contact Info</strong></h2>
+        <h6>
+          <strong>Address :</strong> B 14-15, Udhyog Marg, Block B, Sector 1, Noida, Uttar Pradesh 201301, Near Sector-15 Metro Station.
+          
+          <br /><br/>
+          <strong>Phone :</strong> 77019 28515, 88000 23848
+          <br />
+        </h6>
       </div>
     
       <div id="legalcopy">
         <h6 className="legal">
-          <strong>Note : </strong>&nbsp; Your Payment due within 3 days after your Registration.
+          <strong>Note : </strong>
+          <ul className="registration-point">
+
+            <span>1.</span><li>This is an acknowledgment receipt only. Your admission in the mentioned course is subject to full fee payment, EMI document submission, and installation payment within 7 days of batch allocation.</li>
+            <span>2.</span><li>Students who choose the installments/EMI option may ensure to pay the instalments and submit the EMI document within 7 days of starting the batch, failing which a ₹500/- late fee will be charged.</li>
+            <span>3.</span><li>After the allocation of the batch, if you are facing any issues regarding class timing, trainers, or being unable to continue class due to some reason, inform your counsellor immediately & HR Dept., Uncodemy, at hrdept@uncodemy.com within 7 days of starting the batch.</li>
+            <span>4.</span><li>Lifetime Membership/Access in Class and Training until Placement and Access in Multiple Batches/Trainers is subject to full fee payment by the students.</li>
+            <span>5.</span><li>Apart from class and training in the above-mentioned course and course completion certificate, revision sessions, doubt sessions, confidence-building sessions, grooming sessions, communication sessions, CV-building sessions, technical sessions, and interview sessions are also provided in the same course fee. No additional charges need to be given by students.</li>
+           <span>6.</span> <li>For any support or complaint assistance regarding classes and training, <b>write us at <span style={{color:"#ff5421"}}>support@uncodemy.com</span> or contact or WhatsApp our support team at <span style={{color:"#ff5421"}}>+91-8800023723</span>.</b></li>
+
+          </ul>
         </h6>
       </div>
     </div>

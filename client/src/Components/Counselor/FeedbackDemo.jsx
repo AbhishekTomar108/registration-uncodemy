@@ -60,7 +60,7 @@ function FeedbackDemo() {
 
         console.log('start and date from state =',rangeDate)
       
-        let selectDemo = await fetch(`https://dashboard-backend3-85dw.onrender.com/getCounselorRangeDemoes`,{
+        let selectDemo = await fetch(`http://localhost:8000/getCounselorRangeDemoes`,{
           method:"GET",
           headers:{
             "startDate":rangeDate.startDate,
@@ -147,7 +147,7 @@ function FeedbackDemo() {
 
     console.log("status =",demoId,status)
 
-    let feedback = await fetch("https://dashboard-backend3-85dw.onrender.com/addDemoStatus",{
+    let feedback = await fetch("http://localhost:8000/addDemoStatus",{
         method:"PUT",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({demoId,status})
@@ -298,7 +298,7 @@ function AllTrainerDemo() {
         ContextValue.updateProgress(30)
         ContextValue.updateBarStatus(true)
 
-        let selectDemo = await fetch("https://dashboard-backend3-85dw.onrender.com/getRangeDemoes",{
+        let selectDemo = await fetch("http://localhost:8000/getRangeDemoes",{
           method:"GET",
           headers:{
             "startDate":rangeDate.startDate,

@@ -50,7 +50,7 @@ function FeeTable() {
   const [Feedata, setFeedata] = useState("")
 
   const getTrainerdata = async () => {
-    const res = await fetch("https://dashboard-backend3-85dw.onrender.com/FeeTable", {
+    const res = await fetch("http://localhost:8000/FeeTable", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -129,7 +129,7 @@ function FeeTable() {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://dashboard-backend3-85dw.onrender.com/deleteFee/${id}`, {
+        fetch(`http://localhost:8000/deleteFee/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
@@ -229,7 +229,7 @@ function FeeTable() {
 
   const getAllStudentPaymentStatus =async()=>{
 
-    let studentPaymentStatus = await fetch("https://dashboard-backend3-85dw.onrender.com/getStudentFeesStatus")
+    let studentPaymentStatus = await fetch("http://localhost:8000/getStudentFeesStatus")
     
     studentPaymentStatus = await studentPaymentStatus.json()
     if(studentPaymentStatus.status==="done"){
@@ -327,7 +327,7 @@ function FeeTable() {
 
     console.log("filter month range data=",rangeDate) 
     
-    let getRangeFees = await fetch("https://dashboard-backend3-85dw.onrender.com/getRangeFees",{
+    let getRangeFees = await fetch("http://localhost:8000/getRangeFees",{
       method:"GET",
       headers:{
         "startDate":rangeDate.startDate,
