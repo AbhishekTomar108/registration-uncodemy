@@ -32,7 +32,7 @@ const RunningBatches = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:8000/deleteBatch/${id}`, {
+        fetch(`https://registration-backend2.onrender.com/deleteBatch/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
@@ -94,7 +94,7 @@ const RunningBatches = () => {
 
   const getrunningBatch = async () => {
 
-    let runningBatches = await fetch('http://localhost:8000/getrunningBatch');
+    let runningBatches = await fetch('https://registration-backend2.onrender.com/getrunningBatch');
 
     runningBatches = await runningBatches.json()
 

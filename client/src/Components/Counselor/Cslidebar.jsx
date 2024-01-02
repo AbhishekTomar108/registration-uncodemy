@@ -48,7 +48,7 @@ export default function Cslidebar() {
 
       const receivemessage = async (id) => {
         console.log('counselor receive message')
-        const messageRes = await fetch(`http://localhost:8000/receivemessage/${id}`, {
+        const messageRes = await fetch(`https://registration-backend2.onrender.com/receivemessage/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

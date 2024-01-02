@@ -54,7 +54,7 @@ export default function CAddCounselor() {
     ContextValue.updateBarStatus(true)
 
     try{
-    const res = await fetch('http://localhost:8000/addCounselor', {
+    const res = await fetch('https://registration-backend2.onrender.com/addCounselor', {
       method: 'POST',
       body: formData,
     });

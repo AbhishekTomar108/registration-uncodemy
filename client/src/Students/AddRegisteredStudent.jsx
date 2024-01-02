@@ -142,7 +142,7 @@ export default function AddRegisteredStudent
     ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
     try {
-      const res = await fetch('http://localhost:8000/register', {
+      const res = await fetch('https://registration-backend2.onrender.com/register', {
         method: 'POST',
         body: formData,
       });

@@ -44,7 +44,7 @@ function EditFee() {
   console.log(id);
 
   const getdata = async () => {
-    const res = await fetch(`http://localhost:8000/getfee/${id}`, {
+    const res = await fetch(`https://registration-backend2.onrender.com/getfee/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ function EditFee() {
     console.log("date =", tdate, tempi)
 
 
-    const res2 = await fetch(`http://localhost:8000/FeeDetail/${id}`, {
+    const res2 = await fetch(`https://registration-backend2.onrender.com/FeeDetail/${id}`, {
 
       method: "POST",
       headers: {

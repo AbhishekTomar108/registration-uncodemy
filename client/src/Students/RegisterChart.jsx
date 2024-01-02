@@ -161,7 +161,7 @@ const Horizontalchart = () => {
     ContextValue.updateBarStatus(true)
 
     try {
-      const registrationUrl = "http://localhost:8000/getregisterStudent";
+      const registrationUrl = "https://registration-backend2.onrender.com/getregisterStudent";
       const labelSet = [];
       const registrationDataSet = [];
 
@@ -276,7 +276,7 @@ const Horizontalchart = () => {
 let selectDemo;
 let selectRegister
   try{
-  selectDemo = await fetch("http://localhost:8000/getRangeDemoes",{
+  selectDemo = await fetch("https://registration-backend2.onrender.com/getRangeDemoes",{
     method:"GET",
     headers:{
       "startDate":rangeDate.startDate,
@@ -304,7 +304,7 @@ let selectRegister
 }
 
  try{
-  selectRegister = await fetch("http://localhost:8000/getRangeRegisteredStudent",{
+  selectRegister = await fetch("https://registration-backend2.onrender.com/getRangeRegisteredStudent",{
     method:"GET",
     headers:{
       "startDate":rangeDate.startDate,

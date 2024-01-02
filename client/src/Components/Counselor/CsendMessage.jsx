@@ -173,7 +173,7 @@ else{
     ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
 
-    let data = await fetch('http://localhost:8000/sendmessage', {
+    let data = await fetch('https://registration-backend2.onrender.com/sendmessage', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"

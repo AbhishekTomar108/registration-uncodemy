@@ -18,7 +18,7 @@ function FeeDetail() {
   },[])
 
   const getStudentPayment = async()=>{
-    let paymentData = await fetch(`http://localhost:8000/getStudentPayment/${student._id}`,
+    let paymentData = await fetch(`https://registration-backend2.onrender.com/getStudentPayment/${student._id}`,
     {
       method:'GET',
     })

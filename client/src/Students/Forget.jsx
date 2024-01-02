@@ -21,7 +21,7 @@ export default function Forget() {
         e.preventDefault()
 
         try {
-            let data = await fetch('http://localhost:8000/resetpassword', {
+            let data = await fetch('https://registration-backend2.onrender.com/resetpassword', {
                 method: 'POST',
                 body: JSON.stringify({ "email": email, "user": user }),
                 headers: { "Content-Type": "application/json" }

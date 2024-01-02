@@ -844,6 +844,7 @@ const generateRegisterNo = (student, data)=>{
     else {
         course = splitCourse[0]
     }
+    
     let registrationNo;
     let year = data.RegistrationDate.split('-')[0]
     let month = data.RegistrationDate.split('-')[1]

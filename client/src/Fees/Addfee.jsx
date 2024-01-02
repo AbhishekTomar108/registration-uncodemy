@@ -120,7 +120,7 @@ function Addfee() {
     console.log('fee data =',feeData)
 
     try {
-      const res = await fetch(`http://localhost:8000/AddFee/${id}`, {
+      const res = await fetch(`https://registration-backend2.onrender.com/AddFee/${id}`, {
         method: 'POST',
         body: formData,
       });

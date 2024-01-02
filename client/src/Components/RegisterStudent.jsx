@@ -84,7 +84,7 @@ export default function RegisterStudent(props) {
   
     ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
-    let selectRegister = await fetch("http://localhost:8000/getRangeRegisteredStudent",{
+    let selectRegister = await fetch("https://registration-backend2.onrender.com/getRangeRegisteredStudent",{
       method:"GET",
       headers:{
         "startDate":rangeDate.startDate,

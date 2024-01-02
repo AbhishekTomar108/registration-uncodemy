@@ -71,7 +71,7 @@ export default function AllBatchTiming() {
     console.log('all batch =',days,tempBatchTime)
 
     try{
-    let newBatch = await fetch("http://localhost:8000/addNewBatchTime", {
+    let newBatch = await fetch("https://registration-backend2.onrender.com/addNewBatchTime", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

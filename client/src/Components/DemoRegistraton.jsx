@@ -146,7 +146,7 @@ const DemoRegistration = () => {
 
   const fetchRegistrationData = async () => {
     try {
-      const registrationUrl = "http://localhost:8000/getregisterStudent";
+      const registrationUrl = "https://registration-backend2.onrender.com/getregisterStudent";
       const labelSet = [];
       const registrationDataSet = [];
 
@@ -247,7 +247,7 @@ const DemoRegistration = () => {
   ContextValue.updateProgress(30)
   ContextValue.updateBarStatus(true)
 
-  let selectDemo = await fetch("http://localhost:8000/getRangeDemoes",{
+  let selectDemo = await fetch("https://registration-backend2.onrender.com/getRangeDemoes",{
     method:"GET",
     headers:{
       "startDate":rangeDate.startDate,
@@ -265,7 +265,7 @@ const DemoRegistration = () => {
  setFilterDemoList(selectDemo.Demo)
  setFilterDemoStudent(selectDemo.totalDemoStudent)
 
-  let selectRegister = await fetch("http://localhost:8000/getRangeRegisteredStudent",{
+  let selectRegister = await fetch("https://registration-backend2.onrender.com/getRangeRegisteredStudent",{
     method:"GET",
     headers:{
       "startDate":rangeDate.startDate,

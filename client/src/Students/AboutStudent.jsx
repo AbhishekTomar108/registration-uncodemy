@@ -68,7 +68,7 @@ export default function AboutStudent() {
   const receivemessage = async (id) => {
 
     console.log('receive message')
-    const messageRes = await fetch(`http://localhost:8000/receivemessage`, {
+    const messageRes = await fetch(`https://registration-backend2.onrender.com/receivemessage`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

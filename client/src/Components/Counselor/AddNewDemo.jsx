@@ -101,7 +101,7 @@ import Swal from 'sweetalert2'
             ContextValue.updateBarStatus(true)
 
             try{
-        const res = await fetch('http://localhost:8000/demo', {
+        const res = await fetch('https://registration-backend2.onrender.com/demo', {
             method: 'POST',
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({Email,Name,Background,Trainer,TrainerId,CounselorId,CounselorName,Date,Time,Course,month,year,day, classLink})

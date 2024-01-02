@@ -98,7 +98,7 @@ const RegisterStudentAdd = () => {
     ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
     try {
-      const res = await fetch('http://localhost:8000/registerStudent', {
+      const res = await fetch('https://registration-backend2.onrender.com/registerStudent', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -110,7 +110,7 @@ const RegisterStudentAdd = () => {
 
       const data = await res.json();
 
-      const googleSheetResponse = await fetch('http://localhost:8000/google-sheet-data', {
+      const googleSheetResponse = await fetch('https://registration-backend2.onrender.com/google-sheet-data', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"

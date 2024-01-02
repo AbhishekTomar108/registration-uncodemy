@@ -28,7 +28,7 @@ function DemoData(props) {
 
     // const getTrainerdemo = async () => {
 
-    //     const res = await fetch("http://localhost:8000/getDemoes", {
+    //     const res = await fetch("https://registration-backend2.onrender.com/getDemoes", {
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "application/json"

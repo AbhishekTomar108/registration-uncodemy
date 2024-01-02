@@ -42,7 +42,7 @@ export default function Newpassword() {
     e.preventDefault()
 
     if (password.newPassword === password.confirmPassword) {
-        let data = await fetch('http://localhost:8000/newpassword', {
+        let data = await fetch('https://registration-backend2.onrender.com/newpassword', {
             method: 'POST',
             headers: {
                 "auth-token": token,

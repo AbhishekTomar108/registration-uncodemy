@@ -61,7 +61,7 @@ function AllDemo()
       }
    
       const deleteDemo = async(id)=>{
-        fetch(`http://localhost:8000/deleteDemo/${id}`, {
+        fetch(`https://registration-backend2.onrender.com/deleteDemo/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"

@@ -144,7 +144,7 @@ console.log("counselor upcoming =",counselorUpcoming)
     let checkId = [{ id }]
 
     console.log('value of swal =', text, checkId)
-    let sendData = await fetch('http://localhost:8000/sendmessage', {
+    let sendData = await fetch('https://registration-backend2.onrender.com/sendmessage', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text, checkid: checkId, from: "Counselor" })
@@ -155,7 +155,7 @@ console.log("counselor upcoming =",counselorUpcoming)
   }
   const getdata = async (counselorId) => {
 
-    let studentData = await fetch('http://localhost:8000/getStudentByCounselor', {
+    let studentData = await fetch('https://registration-backend2.onrender.com/getStudentByCounselor', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ CounselorID: counselorId })
@@ -208,7 +208,7 @@ console.log("counselor upcoming =",counselorUpcoming)
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:8000/deleteuser/${id}`, {
+        fetch(`https://registration-backend2.onrender.com/deleteuser/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"

@@ -46,7 +46,7 @@ function AllDemoSection() {
         if(user==="counselor")  
         {  
           try{  
-        selectDemo = await fetch(`http://localhost:8000/getRangeCounselorDemoes/${id}`,{
+        selectDemo = await fetch(`https://registration-backend2.onrender.com/getRangeCounselorDemoes/${id}`,{
           method:"GET",
           headers:{
             "startDate":rangeDate.startDate,
@@ -69,7 +69,7 @@ function AllDemoSection() {
     }
     else{
       try{
-        selectDemo = await fetch(`http://localhost:8000/getRangeTrainerDemoes/${id}`,{
+        selectDemo = await fetch(`https://registration-backend2.onrender.com/getRangeTrainerDemoes/${id}`,{
             method:"GET",
             headers:{
               "startDate":rangeDate.startDate,

@@ -257,7 +257,7 @@ function RegistrationReceipt() {
             <span>3.</span><li>After the allocation of the batch, if you are facing any issues regarding class timing, trainers, or being unable to continue class due to some reason, inform your counsellor immediately & HR Dept., Uncodemy, at hrdept@uncodemy.com within 7 days of starting the batch.</li>
             <span>4.</span><li>Lifetime Membership/Access in Class and Training until Placement and Access in Multiple Batches/Trainers is subject to full fee payment by the students.</li>
             <span>5.</span><li>Apart from class and training in the above-mentioned course and course completion certificate, revision sessions, doubt sessions, confidence-building sessions, grooming sessions, communication sessions, CV-building sessions, technical sessions, and interview sessions are also provided in the same course fee. No additional charges need to be given by students.</li>
-           <span>6.</span> <li>For any support or complaint assistance regarding classes and training, <b>write us at <span style={{color:"#ff5421"}}>support@uncodemy.com</span> or contact or WhatsApp our support team at <span style={{color:"#ff5421"}}>+91-8800023723</span>.</b></li>
+            <span>6.</span> <li>For any support or complaint assistance regarding classes and training, <b>write us at <span style={{color:"#ff5421"}}>support@uncodemy.com</span> or contact or WhatsApp our support team at <span style={{color:"#ff5421"}}>+91-8800023723</span>.</b></li>
 
           </ul>
         </h6>

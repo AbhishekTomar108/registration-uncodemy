@@ -5,6 +5,7 @@ import LoadingBar from 'react-top-loading-bar'
 import { StudentContext } from '../context/StudentState';
 import { HashLoader } from "react-spinners";
 
+
 // import man from "../Components/img/testimonial-2.jpg"
 import { Link } from 'react-router-dom'
 export default function Header() {
@@ -55,7 +56,7 @@ export default function Header() {
           <ul className="navbar-nav flex-row fixed_log">
             <li className="nav-item me-3 me-lg-1">
 
-              <div className="dropdown">
+              {/* <div className="dropdown">
                <button
                   className="btn user btn-secondary dropdown-toggle"
                   type="button"
@@ -64,7 +65,6 @@ export default function Header() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  {/* <img className='log' src={man} alt="" /> */}
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
@@ -74,7 +74,7 @@ export default function Header() {
 
                 </div>
 
-              </div>
+              </div> */}
 
             </li>
 

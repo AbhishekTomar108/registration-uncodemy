@@ -32,7 +32,7 @@ function ViewFee2() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:8000/getTotalFeeschart");
+                const response = await fetch("https://registration-backend2.onrender.com/getTotalFeeschart");
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 }

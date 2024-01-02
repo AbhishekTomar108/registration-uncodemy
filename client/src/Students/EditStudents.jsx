@@ -61,7 +61,7 @@ export default function EditStudents() {
 
   const getdata = async () => {
 
-    const res = await fetch(`http://localhost:8000/getuser/${id}`, {
+    const res = await fetch(`https://registration-backend2.onrender.com/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -149,7 +149,7 @@ console.log('update student  =',inpval)
     tempInpVal.remainingFees = remainingFees
 
     try {
-      const res = await fetch(`http://localhost:8000/updateuser/${id}`, {
+      const res = await fetch(`https://registration-backend2.onrender.com/updateuser/${id}`, {
         method: 'POST',
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify(tempInpVal),

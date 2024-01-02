@@ -51,7 +51,7 @@ const EditRegisteredStudent = () => {
     ContextValue.updateProgress(30)
     ContextValue.updateBarStatus(true)
     try {
-      const res = await fetch(`http://localhost:8000/updateRegisterStudent/${data._id}`, {
+      const res = await fetch(`https://registration-backend2.onrender.com/updateRegisterStudent/${data._id}`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
